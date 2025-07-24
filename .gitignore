@@ -1,0 +1,17 @@
+# Bỏ qua metadata của Eclipse
+.metadata/
+Servers/
+
+# Bỏ qua thư mục build thường gặp
+bin/
+build/
+target/
+
+# Bỏ qua file tạm của Java
+*.class
+*.log
+
+# Bỏ qua các cấu hình cục bộ
+*.iml
+.settings/
+.idea/
