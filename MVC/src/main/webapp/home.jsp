@@ -22,5 +22,25 @@
         }
     %>
     
+    <h3>Chức năng nhân viên</h3>
+    <ul>
+        <li><a href="addEmployee.jsp">➕ Thêm nhân viên</a></li>
+        <li><a href="updateEmployee.jsp">✏️ Cập nhật nhân viên</a></li>
+        <li><a href="deleteEmployee.jsp">🗑️ Xóa nhân viên</a></li>
+        <li><a href="deleteMultipleEmployees.jsp">🗑️ Xóa nhiều nhân viên</a></li>
+        <li><a href="listEmployees.jsp">📋 Danh sách nhân viên</a></li>
+    </ul>
+    
+    <h3>Chức năng phòng ban</h3>
+    <ul>
+        <li><a href="addEmployee.jsp">➕ Thêm phòng ban</a></li>
+        <li><a href="updateEmployee.jsp">✏️ Cập nhật phòng ban</a></li>
+        <li><a href="deleteEmployee.jsp">🗑️ Xóa phòng ban</a></li>
+        <li><a href="deleteMultipleEmployees.jsp">🗑️ Xóa nhiều phòng ban</a></li>
+        <li><a href="PhongBanServlet">📋 Danh sách phòng ban</a></li>
+    </ul>
+    
+    
+    
 </body>
 </html>
