@@ -1,17 +1,28 @@
-# Bỏ qua metadata của Eclipse
-.metadata/
-Servers/
+# Eclipse-specific files
+.classpath
+.project
+.settings/
 
-# Bỏ qua thư mục build thường gặp
-bin/
-build/
+# Maven build folder (nếu có)
 target/
 
-# Bỏ qua file tạm của Java
+# Gradle build folder (nếu có)
+build/
+
+# Java class files
 *.class
+
+# Logs
 *.log
 
-# Bỏ qua các cấu hình cục bộ
-*.iml
-.settings/
-.idea/
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+Servers/
+.metadata/
