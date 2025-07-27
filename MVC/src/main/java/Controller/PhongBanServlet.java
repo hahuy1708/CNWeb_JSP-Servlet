@@ -5,7 +5,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
 import java.io.IOException;
 
 import Model.bo.PhongBanBO;
@@ -33,7 +33,7 @@ public class PhongBanServlet extends HttpServlet {
 				request.getRequestDispatcher("/PhongBanView/PhongBanList.jsp").forward(request, response);
 				break;
 
-			case "showFormAdd":
+			case "addPB":
 				request.getRequestDispatcher("/PhongBanView/InsertPhongBan.jsp").forward(request, response);
 				break;
 
@@ -50,7 +50,18 @@ public class PhongBanServlet extends HttpServlet {
 			               .forward(request, response);
 			    }
 			    break;
-				
+			case "deletePB":
+				String idDelete = request.getParameter("id");
+				if(idDelete != null) {
+					phongBanBO.deletePB(idDelete);
+					request.setAttribute("msg", "Đã xoá phòng ban [" + idDelete + "] thành công");
+				}
+				request.setAttribute("dsPB", phongBanBO.getAllPB());
+				request.getRequestDispatcher("/PhongBanView/DeletePBList.jsp").forward(request, response);
+			case "deleteAll":
+				request.setAttribute("dsPB", phongBanBO.getAllPB());
+				request.getRequestDispatcher("/PhongBanView/DeleteAllPB.jsp").forward(request, response);
+				break;
 			default:
 				response.sendRedirect("PhongBanServlet?action=list");
 				break;
@@ -85,7 +96,28 @@ public class PhongBanServlet extends HttpServlet {
 			PhongBan pb = new PhongBan(idPB, tenPB, moTa);
 			phongBanBO.updatePB(pb);
 			response.sendRedirect("PhongBanServlet?action=list");
-
 		}
+		else if ("deleteAll".equals(action)) {
+	        // Lấy về tất cả các tham số idPB (checkbox name="idPB")
+	        String[] ids = request.getParameterValues("idPB");
+
+	        // Chuyển mảng sang List<String>
+	        ArrayList<String> listIdPB = ids != null ? new ArrayList<>(Arrays.asList(ids)) 
+	        		: new ArrayList<>();
+
+	        // Gọi BO để xóa
+	        int count = phongBanBO.deleteAll(listIdPB);
+
+	        // Chuẩn bị thông báo & load lại danh sách
+	        String msg = (count > 0)
+	            ? "✅ Đã xóa thành công " + count + " phòng ban."
+	            : "❌ Không có phòng ban nào được chọn.";
+	        request.setAttribute("msg", msg);
+	        request.setAttribute("dsPB", phongBanBO.getAllPB());
+	        request.getRequestDispatcher("/PhongBanView/DeleteAllPB.jsp")
+	               .forward(request, response);
+	        return;
+		}
+		
 	}
 }

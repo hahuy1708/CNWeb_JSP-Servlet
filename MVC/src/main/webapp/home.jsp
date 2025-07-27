@@ -24,19 +24,19 @@
     
     <h3>Chức năng nhân viên</h3>
     <ul>
-        <li><a href="addEmployee.jsp">➕ Thêm nhân viên</a></li>
-        <li><a href="updateEmployee.jsp">✏️ Cập nhật nhân viên</a></li>
-        <li><a href="deleteEmployee.jsp">🗑️ Xóa nhân viên</a></li>
-        <li><a href="deleteMultipleEmployees.jsp">🗑️ Xóa nhiều nhân viên</a></li>
-        <li><a href="listEmployees.jsp">📋 Danh sách nhân viên</a></li>
+        <li><a href="NhanVienServlet?action=addNV">➕ Thêm nhân viên</a></li>
+        <li><a href="NhanVienServlet?action=editNV">✏️ Cập nhật nhân viên</a></li>
+        <li><a href="NhanVienServlet?action=deleteNV">🗑️ Xóa nhân viên</a></li>
+        <li><a href="NhanVienServlet?action=deleteAll">🗑️ Xóa nhiều nhân viên</a></li>
+        <li><a href="NhanVienServlet?action=list">📋 Danh sách nhân viên</a></li>
     </ul>
     
     <h3>Chức năng phòng ban</h3>
     <ul>
-        <li><a href="PhongBanServlet?action=showFormAdd">➕ Thêm phòng ban</a></li>
+        <li><a href="PhongBanServlet?action=addPB">➕ Thêm phòng ban</a></li>
         <li><a href="PhongBanServlet?action=editPB">✏️ Cập nhật phòng ban</a></li>   
-        <li><a href="deleteEmployee.jsp">🗑️ Xóa phòng ban</a></li>
-        <li><a href="deleteMultipleEmployees.jsp">🗑️ Xóa nhiều phòng ban</a></li>
+        <li><a href="PhongBanServlet?action=deletePB">🗑️ Xóa phòng ban</a></li>
+        <li><a href="PhongBanServlet?action=deleteAll">🗑️ Xóa nhiều phòng ban</a></li>
         <li><a href="PhongBanServlet?action=list">📋 Danh sách phòng ban</a></li>
     </ul>
     

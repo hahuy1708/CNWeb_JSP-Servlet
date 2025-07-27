@@ -18,4 +18,10 @@ public class PhongBanBO{
 	public PhongBan getPBbyID(String IdPB) {
 		return dao.getPBbyID(IdPB);
 	}
+	public void deletePB(String Id) {
+		dao.deletePB(Id);
+	}
+	public int deleteAll(ArrayList<String> ListIdPB) {
+		return dao.deleteAll(ListIdPB);
+	}
 }

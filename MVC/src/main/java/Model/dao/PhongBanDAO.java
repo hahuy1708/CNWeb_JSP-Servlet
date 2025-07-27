@@ -64,16 +64,39 @@ public class PhongBanDAO{
 			stmt.setString(3, pb.getIdPB());
 			stmt.executeUpdate();
 		} catch(Exception ex) {
-			ex.printStackTrace();
-			
+			ex.printStackTrace();	
 		}
-		
 	}
-	
-	
-	
-	
-
-	
-	
+	public void deletePB(String Id) {
+		try (Connection conn = DBConnection.getConnection()){
+			String sql = "DELETE FROM phongban WHERE IDPB = ?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, Id);
+			stmt.executeUpdate();
+		} catch(Exception ex) {
+			ex.printStackTrace();	
+		}
+	}
+	public int deleteAll(ArrayList<String> ListIdPB) {
+		if(ListIdPB == null || ListIdPB.isEmpty()) return 0;
+		int n = ListIdPB.size();
+		StringBuilder sb = new StringBuilder(n*2);
+		for(int i = 0; i < n; i++) {
+			sb.append("?,");
+		}
+		if(sb.length() > 0) sb.setLength(sb.length() - 1);
+		String sql_holder = sb.toString();
+		String sql = "DELETE FROM phongban WHERE IDPB IN (" + sql_holder + ")"; // DELETE FROM phongban WHERE IDPB IN (?,?,...,?)
+		try(Connection conn = DBConnection.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			for(int i = 0; i < ListIdPB.size(); i++) {
+				stmt.setString(i + 1, ListIdPB.get(i));
+			}
+			return stmt.executeUpdate();
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			return 0;
+		}
+	}
 }
