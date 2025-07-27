@@ -37,17 +37,20 @@ public class PhongBanServlet extends HttpServlet {
 				request.getRequestDispatcher("/PhongBanView/InsertPhongBan.jsp").forward(request, response);
 				break;
 
-//			case "delete":
-//				String idXoa = request.getParameter("id");
-//				phongBanBO.deletePhongBan(idXoa);
-//				response.sendRedirect("PhongBanServlet?action=list");
-//				break;
-//			case "showFormEdit":
-//				ArrayList<PhongBan> updateList = phongBanBO.getAllPB();
-//                request.setAttribute("updateList", updateList);
-//				request.getRequestDispatcher("/PhongBanView/FormUpdatePB.jsp").forward(request, response);
-//				break;
-
+			case "editPB":
+				String idPB = request.getParameter("id");
+			    if (idPB == null) {
+			        request.setAttribute("dsPB", phongBanBO.getAllPB());
+			        request.getRequestDispatcher("/PhongBanView/UpdatePBList.jsp")
+			               .forward(request, response);
+			    } else {
+			        PhongBan pb = phongBanBO.getPBbyID(idPB);
+			        request.setAttribute("phongBan", pb);
+			        request.getRequestDispatcher("/PhongBanView/FormUpdatePB.jsp")
+			               .forward(request, response);
+			    }
+			    break;
+				
 			default:
 				response.sendRedirect("PhongBanServlet?action=list");
 				break;

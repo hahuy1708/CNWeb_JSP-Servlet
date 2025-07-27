@@ -1,40 +1,22 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="Model.bean.PhongBan" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
 
 <html>
-<head>
-    <title>Cập nhật phòng ban</title>
-</head>
+<head><title>Cập nhật Phòng Ban</title></head>
 <body>
-    <h2>Cập nhật phòng ban</h2>
-    <table border="1" cellpadding="10">
-        <tr>
-            <th>ID</th>
-            <th>Tên phòng ban</th>
-            <th>Mô tả</th>
-            <th>Hành động</th>
-        </tr>
-        <%
-            ArrayList<PhongBan> dsPB = (ArrayList<PhongBan>) request.getAttribute("dsPB");
-            if (dsPB != null) {
-                for (PhongBan pb : dsPB) {
-        %>
-        <tr>
-            <td><%= pb.getIdPB() %></td>
-            <td><%= pb.getTenPB() %></td>
-            <td><%= pb.getMoTa() %></td>
-            <td>
-            	<a href = "PhongBanServlet?action=showFormEdit&id=<%= pb.getIdPB() %>">Cập nhật</a>
-            </td>
-        </tr>
-        <%
-                }
-            }
-        %>
-    </table>
-    <div class="back-link">	
-        <a href="<%= request.getContextPath() %>/home.jsp">← Quay lại trang chủ</a>
-    </div>
+  <h2>Cập nhật Phòng Ban</h2>
+  <form action="PhongBanServlet?action=update" method="post">
+    <label>Mã phòng ban:</label>
+    <input type="text" name="idPB" value="${phongBan.idPB}" readonly /><br/><br/>
+
+    <label>Tên phòng ban:</label>
+    <input type="text" name="tenPB" value="${phongBan.tenPB}" required/><br/><br/>
+
+    <label>Mô tả:</label><br/>
+    <textarea name="moTa" rows="4" cols="50">${phongBan.moTa}</textarea><br/><br/>
+
+    <input type="submit" value="Cập nhật"/>
+    <a href="PhongBanServlet?action=editPB">Quay lại</a>
+  </form>
 </body>
 </html>

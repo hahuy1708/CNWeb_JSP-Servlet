@@ -34,7 +34,7 @@
     <h3>Chức năng phòng ban</h3>
     <ul>
         <li><a href="PhongBanServlet?action=showFormAdd">➕ Thêm phòng ban</a></li>
-        <li><a href="PhongBanServlet?action=showFormEdit">✏️ Cập nhật phòng ban</a></li> <!-- chức năng update phòng ban bị lỗi  -->  
+        <li><a href="PhongBanServlet?action=editPB">✏️ Cập nhật phòng ban</a></li>   
         <li><a href="deleteEmployee.jsp">🗑️ Xóa phòng ban</a></li>
         <li><a href="deleteMultipleEmployees.jsp">🗑️ Xóa nhiều phòng ban</a></li>
         <li><a href="PhongBanServlet?action=list">📋 Danh sách phòng ban</a></li>
