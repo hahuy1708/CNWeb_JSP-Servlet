@@ -9,4 +9,13 @@ public class PhongBanBO{
 	public ArrayList<PhongBan> getAllPB(){
 		return dao.getAllPB();
 	}
+	public void insertPB(PhongBan pb) {
+		dao.inserPB(pb);
+	}
+	public void updatePB(PhongBan pb) {
+		dao.updatePB(pb);
+	}
+	public PhongBan getPBbyID(String IdPB) {
+		return dao.getPBbyID(IdPB);
+	}
 }

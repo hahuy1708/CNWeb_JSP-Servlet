@@ -4,15 +4,16 @@
 
 <html>
 <head>
-    <title>Danh sách phòng ban</title>
+    <title>Cập nhật phòng ban</title>
 </head>
 <body>
-    <h2>Danh sách phòng ban</h2>
+    <h2>Cập nhật phòng ban</h2>
     <table border="1" cellpadding="10">
         <tr>
             <th>ID</th>
             <th>Tên phòng ban</th>
             <th>Mô tả</th>
+            <th>Hành động</th>
         </tr>
         <%
             ArrayList<PhongBan> dsPB = (ArrayList<PhongBan>) request.getAttribute("dsPB");
@@ -23,13 +24,16 @@
             <td><%= pb.getIdPB() %></td>
             <td><%= pb.getTenPB() %></td>
             <td><%= pb.getMoTa() %></td>
+            <td>
+            	<a href = "PhongBanServlet?action=showFormEdit&id=<%= pb.getIdPB() %>">Cập nhật</a>
+            </td>
         </tr>
         <%
                 }
             }
         %>
     </table>
-    <div class="back-link">
+    <div class="back-link">	
         <a href="<%= request.getContextPath() %>/home.jsp">← Quay lại trang chủ</a>
     </div>
 </body>
