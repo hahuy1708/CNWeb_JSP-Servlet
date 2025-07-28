@@ -44,12 +44,14 @@ public class NhanVienServlet extends HttpServlet {
 
 			case "editNV":
 				String idNV = request.getParameter("id");
-				if (idNV != null) {
+				if (idNV == null) {
+					request.setAttribute("dsNV", nhanVienBO.getAllNhanVien());
+					request.getRequestDispatcher("/NhanVienView/UpdateNVList.jsp")
+					.forward(request, response);
+				} else {
 					NhanVien nv = nhanVienBO.getNhanVienByID(idNV);
 					request.setAttribute("nhanVien", nv);
 					request.getRequestDispatcher("/NhanVienView/FormUpdateNV.jsp").forward(request, response);
-				} else {
-					response.sendRedirect("NhanVienServlet?action=list");
 				}
 				break;
 

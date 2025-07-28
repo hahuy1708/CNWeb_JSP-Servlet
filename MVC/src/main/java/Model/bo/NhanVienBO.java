@@ -30,4 +30,5 @@ public class NhanVienBO {
     public int deleteAllNhanVien(ArrayList<String> listIdNV) {
         return dao.deleteAllNV(listIdNV);
     }
+    
 }

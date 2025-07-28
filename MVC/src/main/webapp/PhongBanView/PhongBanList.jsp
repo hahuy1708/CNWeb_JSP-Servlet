@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Model.bean.PhongBan" %>
+<%@ page import="Model.bean.NhanVien" %>
 
 <html>
 <head>

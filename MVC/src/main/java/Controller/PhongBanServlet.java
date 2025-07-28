@@ -32,7 +32,7 @@ public class PhongBanServlet extends HttpServlet {
 				request.setAttribute("dsPB", danhSachPB);
 				request.getRequestDispatcher("/PhongBanView/PhongBanList.jsp").forward(request, response);
 				break;
-
+				
 			case "addPB":
 				request.getRequestDispatcher("/PhongBanView/InsertPhongBan.jsp").forward(request, response);
 				break;
@@ -98,17 +98,11 @@ public class PhongBanServlet extends HttpServlet {
 			response.sendRedirect("PhongBanServlet?action=list");
 		}
 		else if ("deleteAll".equals(action)) {
-	        // Lấy về tất cả các tham số idPB (checkbox name="idPB")
 	        String[] ids = request.getParameterValues("idPB");
-
-	        // Chuyển mảng sang List<String>
 	        ArrayList<String> listIdPB = ids != null ? new ArrayList<>(Arrays.asList(ids)) 
 	        		: new ArrayList<>();
-
-	        // Gọi BO để xóa
 	        int count = phongBanBO.deleteAll(listIdPB);
 
-	        // Chuẩn bị thông báo & load lại danh sách
 	        String msg = (count > 0)
 	            ? "✅ Đã xóa thành công " + count + " phòng ban."
 	            : "❌ Không có phòng ban nào được chọn.";
