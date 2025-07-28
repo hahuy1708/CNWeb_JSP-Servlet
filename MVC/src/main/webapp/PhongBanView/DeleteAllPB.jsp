@@ -5,6 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Xóa nhiều Phòng Ban</title>
+  <link rel="stylesheet" href="css/style.css">
+  
   <script>
     function checkSubmit() {
       let checked = document.querySelectorAll('input[name="idPB"]:checked');
@@ -15,6 +17,7 @@
       return confirm('Bạn có chắc muốn xóa ' + checked.length + ' phòng ban đã chọn?');
     }
   </script>
+  
 </head>
 <body>
   <h2>Xóa nhiều Phòng Ban</h2>

@@ -3,6 +3,8 @@
 
 <html>
 <head><title>Cập nhật Phòng Ban</title></head>
+<link rel="stylesheet" href="css/style.css">
+
 <body>
   <h2>Cập nhật Phòng Ban</h2>
   <form action="PhongBanServlet?action=update" method="post">

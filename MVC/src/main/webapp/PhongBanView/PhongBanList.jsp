@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>Danh sách phòng ban</title>
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     <h2>Danh sách phòng ban</h2>

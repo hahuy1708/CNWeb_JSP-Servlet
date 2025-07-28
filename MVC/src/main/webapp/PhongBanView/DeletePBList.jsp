@@ -5,6 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Quản lý Xóa Phòng Ban</title>
+  <link rel="stylesheet" href="css/style.css">
+  
   <script>
     function confirmDelete(idPB, tenPB) {
       if (confirm("Bạn có chắc chắn muốn xóa phòng ban \"" + tenPB + "\" (ID=" + idPB + ")?")) {

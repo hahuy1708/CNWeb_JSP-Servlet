@@ -4,56 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Thêm Phòng Ban</title>
-    <style>
-        body {
-            font-family: Arial;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
+<link rel="stylesheet" href="css/style.css">
 
-        h2 {
-            color: #333;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            max-width: 400px;
-            margin: auto;
-        }
-
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 6px;
-            margin-top: 5px;
-        }
-
-        input[type="submit"] {
-            margin-top: 15px;
-            padding: 8px 16px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #218838;
-        }
-
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 15px;
-        }
-    </style>
-</head>
 <body>
 
     <h2>Thêm Phòng Ban Mới</h2>

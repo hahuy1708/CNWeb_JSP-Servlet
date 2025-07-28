@@ -2,6 +2,8 @@
 <%@ page import="java.util.List, Model.bean.PhongBan"%>
 <html>
 <head><title>Chọn phòng ban để cập nhật</title></head>
+<link rel="stylesheet" href="css/style.css">
+
 <body>
   <h2>Chọn phòng ban để cập nhật</h2>
   <table border="1" cellpadding="8">

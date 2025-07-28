@@ -7,6 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Trang chủ</title>
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     <h2>Trang Home</h2>
