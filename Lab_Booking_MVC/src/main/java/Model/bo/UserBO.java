@@ -8,4 +8,7 @@ public class UserBO{
 	public User checkAuth(String username, String password) throws ClassNotFoundException {
 		return userDAO.authenticate(username, password);
 	}
+	public boolean registerUser(User user) throws ClassNotFoundException {
+		return userDAO.insertUser(user);
+	}
 }

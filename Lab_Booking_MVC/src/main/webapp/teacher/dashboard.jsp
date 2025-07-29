@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+
 <%@ page import="Model.bean.User" %> 
 
 <%
@@ -8,6 +9,8 @@
 <html>
 <head>
     <title>Teacher Dashboard</title>
+    <meta charset="UTF-8">
+    
 </head>
 <body>
     <h1>Đây là trang dashboard dành cho giáo viên.</h1>
@@ -16,6 +19,7 @@
         if(user != null){
     %>
         <p>Chào mừng, <%= user.getFullname() %> (username: <%= user.getUsername() %>)</p>
+        <p><a href="<%= request.getContextPath() %>/LogoutServlet">Đăng xuất</a></p>
     <%
         } else {
     %>

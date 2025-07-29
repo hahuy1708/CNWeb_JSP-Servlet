@@ -1,7 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
-    <title>Đăng nhập hệ thống</title>
+<meta charset="UTF-8">
+<title>Đăng nhập hệ thống</title>
 </head>
 <body>
     <h2>Đăng nhập</h2>
@@ -16,6 +17,9 @@
         </div>
         <button type="submit">Đăng nhập</button>
         <button type="reset">Reset </button>
+        <p>Chưa có tài khoản? <a href="UserServlet?action=register">Đăng ký</a></p>
+        
+       
         
     </form>
 </body>
