@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Đăng ký tài khoản</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+
 </head>
 <body>
     <h2>Đăng ký tài khoản giáo viên</h2>

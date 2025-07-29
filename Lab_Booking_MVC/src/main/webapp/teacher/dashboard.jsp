@@ -10,6 +10,7 @@
 <head>
     <title>Teacher Dashboard</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     
 </head>
 <body>
@@ -19,7 +20,7 @@
         if(user != null){
     %>
         <p>Chào mừng, <%= user.getFullname() %> (username: <%= user.getUsername() %>)</p>
-        <p><a href="<%= request.getContextPath() %>/LogoutServlet">Đăng xuất</a></p>
+        <p><a href="<%= request.getContextPath() %>/UserServlet?action=logout">Đăng xuất</a></p>
     <%
         } else {
     %>

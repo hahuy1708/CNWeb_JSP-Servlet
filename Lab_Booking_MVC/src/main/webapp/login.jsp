@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Đăng nhập hệ thống</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+
 </head>
 <body>
     <h2>Đăng nhập</h2>
-    <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
+    <form action="${pageContext.request.contextPath}/UserServlet?action=login" method="post">
         <div>
             <label>Tên đăng nhập:</label>
             <input type="text" name="username" required>
