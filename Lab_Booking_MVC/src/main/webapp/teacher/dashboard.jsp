@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 
 <%@ page import="Model.bean.User" %> 
+<%@ page import="Model.bean.Room" %>
 
 <%
     User user = (User) session.getAttribute("user");
@@ -15,6 +16,7 @@
 </head>
 <body>
     <h1>Đây là trang dashboard dành cho giáo viên.</h1>
+    
 
     <%
         if(user != null){

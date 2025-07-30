@@ -8,6 +8,11 @@
 </head>
 <body>
     <h2>Đăng nhập</h2>
+    <% String error = (String) request.getAttribute("error"); %>
+<% if (error != null) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>
+    
     <form action="${pageContext.request.contextPath}/UserServlet?action=login" method="post">
         <div>
             <label>Tên đăng nhập:</label>

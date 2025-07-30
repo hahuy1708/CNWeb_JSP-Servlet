@@ -90,15 +90,23 @@ public class UserServlet extends HttpServlet {
 
         try {
             User user = userBO.checkAuth(username, password);
-            if (user != null && "ACTIVE".equals(user.getStatus())) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
+            
+            if (user != null){
+            	if("INACTIVE".equals(user.getStatus())) {
+            		request.setAttribute("error", "Tài khoản của bạn đang bị khóa. Vui lòng liên hệ quản trị viên.");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+            	}
+            	else if("ACTIVE".equals(user.getStatus())) {
+            
+            		HttpSession session = request.getSession();
+            		session.setAttribute("user", user);
 
-                if ("ADMIN".equals(user.getRole())) {
-                    response.sendRedirect("admin/dashboard.jsp");
-                } else {
-                    response.sendRedirect("teacher/dashboard.jsp");
-                }
+            		if ("ADMIN".equals(user.getRole())) {
+            			response.sendRedirect("admin/dashboard.jsp");
+            		} else {
+            			response.sendRedirect("teacher/dashboard.jsp");
+            		}
+            	}
             } else {
                 request.setAttribute("error", "Tên đăng nhập hoặc mật khẩu không đúng");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
