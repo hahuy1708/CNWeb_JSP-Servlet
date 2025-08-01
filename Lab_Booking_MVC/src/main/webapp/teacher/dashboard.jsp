@@ -17,8 +17,6 @@
 <body>
     <h1>Đây là trang dashboard dành cho giáo viên.</h1>
     
-     <a href="<%= request.getContextPath() %>/RoomServlet?action=list">Xem danh sách phòng</a>
-    
 
     <%
         if(user != null){
@@ -32,6 +30,8 @@
     <%
         }
     %>
+    
+    <a href="<%= request.getContextPath() %>/RoomServlet?action=list">Xem danh sách phòng</a>
     
 
 </body>

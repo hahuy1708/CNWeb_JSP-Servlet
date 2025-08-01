@@ -28,9 +28,11 @@
                 <td>${room.description}</td>
                 <td>${room.status}</td>
                 <td>
-                    <a href="RoomServlet?action=edit&id=${room.id}">Sửa</a>
-                    <a href="RoomServlet?action=delete&id=${room.id}" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
-                </td>
+    <a href="RoomServlet?action=edit&id=${room.id}" class="btn-edit">Sửa</a>
+    <a href="RoomServlet?action=delete&id=${room.id}" 
+       onclick="return confirm('Bạn có chắc muốn xóa phòng ${room.roomName}?')" 
+       class="btn-delete">Xóa</a>
+</td>
             </tr>
         </c:forEach>
     </table>

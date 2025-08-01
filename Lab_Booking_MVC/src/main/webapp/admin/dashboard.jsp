@@ -9,7 +9,7 @@
 <body>
     <h1>Chào mừng Admin!</h1>
     <p>Đây là trang dashboard dành cho quản trị viên.</p>
-     <a href="<%= request.getContextPath() %>/RoomServlet?action=list">Xem danh sách phòng</a>
+     <a href="<%= request.getContextPath() %>/RoomServlet?action=list">Phòng Lab</a>
     <p><a href="<%= request.getContextPath() %>/UserServlet?action=logout">Đăng xuất</a></p>
 </body>
 </html>

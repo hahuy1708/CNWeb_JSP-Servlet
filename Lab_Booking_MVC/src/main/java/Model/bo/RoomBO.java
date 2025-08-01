@@ -1,5 +1,6 @@
 package Model.bo;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import Model.bean.Room;
 import Model.dao.RoomDAO;
@@ -45,5 +46,8 @@ public class RoomBO {
             e.printStackTrace();
             return new ArrayList<>();
         }
+    }
+    public Room getRoomById(int id) {
+        return roomDAO.getRoomById(id);
     }
 }

@@ -87,4 +87,28 @@ public class RoomDAO {
         }
         return list;
     }
+    public Room getRoomById(int id) {
+        String sql = "SELECT * FROM rooms WHERE id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+                return new Room(
+                    rs.getInt("id"),
+                    rs.getString("room_name"),
+                    rs.getInt("computer_count"),
+                    rs.getString("description"),
+                    rs.getString("status")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+        return null;
+    }
 }

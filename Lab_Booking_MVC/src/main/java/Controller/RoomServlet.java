@@ -43,27 +43,27 @@ public class RoomServlet extends HttpServlet {
                     listAvailableRoomsForTeacher(request, response);
                 }
                 break;
-//            case "add":
-//                if ("ADMIN".equals(user.getRole())) {
-//                    showAddForm(request, response);
-//                } else {
-//                    response.sendRedirect("unauthorized.jsp");
-//                }
-//                break;
-//            case "edit":
-//                if ("ADMIN".equals(user.getRole())) {
-//                    showEditForm(request, response);
-//                } else {
-//                    response.sendRedirect("unauthorized.jsp");
-//                }
-//                break;
-//            case "delete":
-//                if ("ADMIN".equals(user.getRole())) {
-//                    deleteRoom(request, response);
-//                } else {
-//                    response.sendRedirect("unauthorized.jsp");
-//                }
-//                break;
+            case "add":
+                if ("ADMIN".equals(user.getRole())) {
+                    showAddForm(request, response);
+                } else {
+                    response.sendRedirect("unauthorized.jsp");
+                }
+                break;
+            case "edit":
+                if ("ADMIN".equals(user.getRole())) {
+                    showEditForm(request, response);
+                } else {
+                    response.sendRedirect("unauthorized.jsp");
+                }
+                break;
+            case "delete":
+                if ("ADMIN".equals(user.getRole())) {
+                    deleteRoom(request, response);
+                } else {
+                    response.sendRedirect("unauthorized.jsp");
+                }
+                break;
 //            case "book":
 //                if ("TEACHER".equals(user.getRole())) {
 //                    bookRoom(request, response);
@@ -81,6 +81,10 @@ public class RoomServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+    	    	
         HttpSession session = request.getSession(false);
         User user = (session != null) ? (User) session.getAttribute("user") : null;
 
@@ -113,16 +117,16 @@ public class RoomServlet extends HttpServlet {
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("admin/room_form.jsp").forward(request, response);
+        request.getRequestDispatcher("admin/room_add_form.jsp").forward(request, response);
     }
 
-//    private void showEditForm(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        Room room = roomBO.getRoomById(id);
-//        request.setAttribute("room", room);
-//        request.getRequestDispatcher("admin/room_form.jsp").forward(request, response);
-//    }
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Room room = roomBO.getRoomById(id);
+        request.setAttribute("room", room);
+        request.getRequestDispatcher("admin/room_edit_form.jsp").forward(request, response);
+    }
 
     private void insertRoom(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
