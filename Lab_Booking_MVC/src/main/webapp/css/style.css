@@ -1,136 +1,303 @@
-/* style.css – Giao diện hiện đại cho JSP pages */
+/* CSS cho Room Booking System - Phù hợp với cấu trúc JSP */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-:root {
-  --primary-color: #3A8DFF;
-  --secondary-color: #f6f9fc;
-  --text-color: #333;
-  --border-radius: 8px;
-  --transition: all 0.3s ease;
-  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-
+/* Reset và base styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  padding: 30px;
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header */
-header {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 25px;
-  border-radius: var(--border-radius);
-  text-align: center;
-  box-shadow: var(--shadow);
+/* Tiêu đề chính */
+h1 {
+    background: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: #2563eb;
+    font-size: 2.2em;
+    text-align: center;
+    font-weight: 700;
 }
 
-header h1 {
-  font-size: 2.8em;
+h2 {
+    color: #2563eb;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-/* Navigation */
-nav {
-  background-color: #fff;
-  padding: 15px;
-  margin: 20px 0;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+/* Links và buttons */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-nav a {
-  color: var(--primary-color);
-  text-decoration: none;
-  margin-right: 20px;
-  font-weight: bold;
-  transition: var(--transition);
+a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
 }
 
-nav a:hover {
-  color: #0056d2;
-  text-decoration: underline;
+/* Link "Thêm phòng mới" */
+a[href*="action=add"] {
+    display: inline-block;
+    background: #10b981;
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-decoration: none !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s ease;
 }
 
-/* Main Content */
-main {
-  background: #ffffff;
-  padding: 35px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+a[href*="action=add"]:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
 }
 
-/* Footer */
-footer {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 0.95em;
-  color: #666;
+/* Table styles */
+table {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background: #f8fafc;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+tr:hover {
+    background: #f9fafb;
+    transition: background 0.2s ease;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Status styling */
+td:nth-child(5) {
+    font-weight: 600;
+}
+
+/* ACTIVE status */
+tr td:nth-child(5):contains("ACTIVE") {
+    color: #059669;
+}
+
+/* INACTIVE status */
+tr td:nth-child(5):contains("INACTIVE") {
+    color: #dc2626;
+}
+
+/* Action buttons */
+.btn-edit, .btn-delete {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+.btn-edit {
+    background: #2563eb;
+    color: white !important;
+}
+
+.btn-edit:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background: #dc2626;
+    color: white !important;
+}
+
+.btn-delete:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+/* Form container */
+.form-container {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Form actions */
+.form-actions {
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.btn-submit, .btn-cancel {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.btn-submit {
+    background: #2563eb;
+    color: white !important;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-cancel {
+    background: #6b7280;
+    color: white !important;
+}
+
+.btn-cancel:hover {
+    background: #4b5563;
+    transform: translateY(-1px);
+}
+
+/* Dashboard styles */
+body p {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Navigation links trong dashboard */
+body > a {
+    display: inline-block;
+    background: white;
+    padding: 15px 25px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+body > a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* Responsive design */
-@media screen and (max-width: 768px) {
-  header h1 {
-    font-size: 2em;
-  }
-
-  main {
-    padding: 25px;
-  }
-
-  nav a {
-    display: block;
-    margin-bottom: 10px;
-  }
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        padding: 20px;
+        font-size: 1.8em;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .form-actions {
+        text-align: center;
+    }
+    
+    .btn-submit, .btn-cancel {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
 }
-
-form {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 25px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-}
-
-form div {
-  margin-bottom: 15px;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-color: var(--primary-color);
-  outline: none;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: var(--transition);
-  margin-right: 10px;
-}
-
-button:hover {
-  background-color: #0056d2;
-}
-

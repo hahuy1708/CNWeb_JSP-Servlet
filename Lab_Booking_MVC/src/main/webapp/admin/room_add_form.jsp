@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Thêm phòng mới</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <style>
         .form-container {
             max-width: 500px;
