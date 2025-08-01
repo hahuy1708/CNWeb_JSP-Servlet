@@ -71,6 +71,7 @@ public class RoomServlet extends HttpServlet {
 //                    response.sendRedirect("unauthorized.jsp");
 //                }
 //                break;
+            
             default:
                 response.sendRedirect("login.jsp");
                 break;

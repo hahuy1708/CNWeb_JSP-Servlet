@@ -70,7 +70,7 @@ public class RoomDAO {
 
     public ArrayList<Room> getAvailableRooms() throws SQLException, ClassNotFoundException {
         ArrayList<Room> list = new ArrayList<>();
-        String sql = "SELECT * FROM rooms WHERE status = 'AVAILABLE'";
+        String sql = "SELECT * FROM rooms WHERE status = 'ACTIVE'";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
